@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import { Router, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import styled from '@emotion/styled'
+import ApplicantContainer from '../containers/ApplicantContainer'
 
 const Container = styled.div`
   text-align: center;
@@ -16,9 +17,9 @@ function Routes() {
       <Container>
         <Header />
         <Switch>
-          <Route path="/" component={CounterContainer} />
-        </Switch>
-      </Container>
+          <Route path="/counter" component={CounterContainer} /> <Route path="/" component={ApplicantContainer} />{' '}
+        </Switch>{' '}
+      </Container>{' '}
     </Router>
   )
 }
