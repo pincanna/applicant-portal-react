@@ -67,6 +67,7 @@ const Lookup = (props) => {
                   className="form-control"
                   value={locatorID}
                   onChange={(e) => setLocatorID(e.target.value)}
+                  placeholder="P000000A"
                 />
               </div>
               <div className="form-group">
