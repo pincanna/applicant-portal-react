@@ -46,7 +46,7 @@ const Show = ({ applicant }) => {
             </Panel>
           </div>
           <div className="col-md-8">
-            <Panel header={fullName}>
+            <Panel header="Application Status" toggleable={true}>
               {applicant.resume_uploaded && <div className="alert alert-success">We have received your resume.</div>}
               {!applicant.resume_uploaded && (
                 <div className="alert alert-warning">We have not received your resume.</div>
@@ -73,6 +73,30 @@ const Show = ({ applicant }) => {
                 </p>
               </div>
             </Panel>
+            {applicant.comments.length > 0 && (
+              <Panel header="Comments" toggleable={true}>
+                <table className="table table-bordered table-striped table-hoverable table-sm">
+                  <thead>
+                    <tr>
+                      <th>Timestamp</th>
+                      <th>Comment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {applicant.comments.map((comment) => (
+                      <tr>
+                        <td>
+                          {moment(comment.timestamp)
+                            .tz('America/Detroit')
+                            .format('lll')}
+                        </td>
+                        <td>{comment.body}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </Panel>
+            )}
           </div>
         </div>
       </LeftAligned>
