@@ -5,6 +5,7 @@ import spdf from 'simple-react-pdf'
 import moment from 'moment-timezone'
 import styled from '@emotion/styled'
 import { Panel } from 'primereact/panel'
+import UploadResume from './upload'
 
 const LeftAligned = styled.div`
   text-align: left;
@@ -73,6 +74,11 @@ const Show = ({ applicant }) => {
                 </p>
               </div>
             </Panel>
+            {!applicant.resume_uploaded && (
+              <Panel header="Upload Resume">
+                <UploadResume id={applicant.locatorID} />
+              </Panel>
+            )}
             {applicant.comments.length > 0 && (
               <Panel header="Comments" toggleable={true}>
                 <table className="table table-bordered table-striped table-hoverable table-sm">

@@ -35,7 +35,11 @@ export default function counter(state = initialState, action) {
         }
         case ActionTypes.CLEAR_APPLICANT:
           return initialState
-        default:
-          return state
+        case ActionTypes.RESUME_UPLOAD_SUCCESS:
+          return {
+            ...state, resume_uploaded: true
+          }
+          default:
+            return state
   }
 }

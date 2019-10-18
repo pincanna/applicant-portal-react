@@ -7,3 +7,10 @@ export function fetchApplicantSuccess(data) {
     payload: data
   })
 }
+
+export function resumeUploaded(data) {
+  store.dispatch({
+    type: ActionTypes.RESUME_UPLOAD_SUCCESS,
+    payload: data
+  })
+}
