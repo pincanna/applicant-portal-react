@@ -17,7 +17,7 @@ const ApplicantContainer = (props) => {
   useEffect(() => {
     if (query.access_token) {
       axios
-        .get(`http://localhost:5300/api/v1/applicants/00000.json?accessKey=${query.access_token}`)
+        .get(`https://gateway.pincanna.com/api/v1/applicants/00000.json?accessKey=${query.access_token}`)
         .then((res) => res.data)
         .then((data) => fetchApplicantSuccess(data))
         .catch((err) => console.error(err))

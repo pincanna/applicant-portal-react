@@ -11,7 +11,7 @@ const UploadResume = (props) => {
     formData.append('applicant[certificate]', file)
     console.log(file)
     axios
-      .patch(`http://localhost:5300/api/v1/applicants/${props.id}`, formData, {
+      .patch(`https://gateway.pincanna.com/api/v1/applicants/${props.id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
