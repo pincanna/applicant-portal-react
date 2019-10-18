@@ -16,7 +16,7 @@ const TopBar = styled.div`
 function Header() {
   return (
     <TopBar>
-      <img src={logo} className="redux-logo" alt="logo" />
+      <img src={logo} className="redux-logo img-fluid" alt="logo" />
     </TopBar>
   )
 }
