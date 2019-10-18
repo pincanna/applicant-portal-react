@@ -14,6 +14,9 @@ const initialState = {
   loaded: false,
   error: false,
   applicationID: null,
+  locatorID: null,
+  entryDate: null,
+  comments: [],
 }
 
 export default function counter(state = initialState, action) {
@@ -21,17 +24,17 @@ export default function counter(state = initialState, action) {
     case ActionTypes.LOAD_APPLICANT_SUCCESS:
       return {
         ...state,
+        ...action.payload,
         loaded: true,
-          applicationID: action.payload.id,
       }
-      case ActionTypes.LOAD_APPLICANT_FAILURE:
-        return {
-          ...state,
-          loaded: false,
-        }
-        case ActionTypes.CLEAR_APPLICANT:
-          return initialState
-        default:
-          return state
+    case ActionTypes.LOAD_APPLICANT_FAILURE:
+      return {
+        ...state,
+        loaded: false,
+      }
+    case ActionTypes.CLEAR_APPLICANT:
+      return initialState
+    default:
+      return state
   }
 }

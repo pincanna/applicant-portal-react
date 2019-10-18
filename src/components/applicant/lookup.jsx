@@ -10,11 +10,9 @@ const Lookup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('https://gateway.pincanna.com/job_applications/lookup_id', {
-        first_name: firstName,
-        last_name: lastName,
-        entry_id: locatorID,
-      })
+      .get(
+        `https://gateway.pincanna.com/api/v1/applicants/${locatorID}.json?firstName=${firstName}&lastName=${lastName}`,
+      )
       .then((value) => value.data)
       .then((data) => fetchApplicantSuccess(data))
       .catch((error) => console.error(error))
