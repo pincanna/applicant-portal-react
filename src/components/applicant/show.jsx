@@ -56,7 +56,13 @@ const Show = ({ applicant }) => {
                 <p>
                   <strong>Hello {fullName}</strong>,
                 </p>
+                <p>
+                  {applicant.resume_uploaded
+                    ? 'Thank you for providing your resume; we have added it to your file.'
+                    : 'We have not yet received your resume. We will not be able to review your application until you submit a resume.'}
+                </p>
                 <p>Our hiring team is currently reviewing all applications.</p>
+
                 <p>
                   If you are among qualified candidates, you will receive a call from one of our recruiters to schedule
                   a phone interview. In any case, we will keep you posted on the status of your application.
