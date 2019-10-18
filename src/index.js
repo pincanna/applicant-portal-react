@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import Routes from './routes'
+import 'bootstrap/dist/css/bootstrap.css'
 import './styles/globalStyles.css'
 import * as serviceWorker from './utils/serviceWorker'
 
