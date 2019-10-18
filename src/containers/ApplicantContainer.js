@@ -3,13 +3,10 @@ import PropTypes from 'prop-types'
 import ActionTypes from '../constants/actionTypes'
 import { fetchApplicantSuccess } from '../actions/applicant'
 import { connect } from 'react-redux'
+import Lookup from '../components/applicant/lookup'
 
 const ApplicantContainer = (props) => {
-  return (
-    <div>
-      <p>Coming soon</p>
-    </div>
-  )
+  return <div>{!props.applicant.loaded && <Lookup />}</div>
 }
 
 const mapStateToProps = (state) => {
