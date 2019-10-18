@@ -20,7 +20,7 @@ const Lookup = (props) => {
       )
       .then((value) => value.data)
       .then((data) => fetchApplicantSuccess(data))
-      .catch((error) => console.error(error))
+      .catch((error) => alert('Please try again.'))
   }
   return (
     <PaddedTop>
