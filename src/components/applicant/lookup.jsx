@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { fetchApplicantSuccess } from '../../actions/applicant'
 
 const Lookup = (props) => {
   const [firstName, setFirstName] = useState('')
@@ -6,7 +9,15 @@ const Lookup = (props) => {
   const [locatorID, setLocatorID] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('submitted')
+    axios
+      .post('https://gateway.pincanna.com/job_applications/lookup_id', {
+        first_name: firstName,
+        last_name: lastName,
+        entry_id: locatorID,
+      })
+      .then((value) => value.data)
+      .then((data) => fetchApplicantSuccess(data))
+      .catch((error) => console.error(error))
   }
   return (
     <div className="container">
@@ -41,4 +52,7 @@ const Lookup = (props) => {
   )
 }
 
-export default Lookup
+export default connect(
+  null,
+  { fetchApplicantSuccess },
+)(Lookup)

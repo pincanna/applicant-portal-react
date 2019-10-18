@@ -13,17 +13,25 @@ const initialState = {
   loading: false,
   loaded: false,
   error: false,
+  applicationID: null,
 }
 
 export default function counter(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.LOAD_APPLICANT_SUCCESS:
-      return state + 1
-    case ActionTypes.LOAD_APPLICANT_FAILURE:
-      return state - 1
-    case ActionTypes.CLEAR_APPLICANT:
-      return initialState;
-    default:
-      return state
+      return {
+        ...state,
+        loaded: true,
+          applicationID: action.payload.id,
+      }
+      case ActionTypes.LOAD_APPLICANT_FAILURE:
+        return {
+          ...state,
+          loaded: false,
+        }
+        case ActionTypes.CLEAR_APPLICANT:
+          return initialState
+        default:
+          return state
   }
 }
