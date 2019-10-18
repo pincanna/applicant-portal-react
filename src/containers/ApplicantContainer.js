@@ -4,6 +4,9 @@ import { fetchApplicantSuccess } from '../actions/applicant'
 import { connect } from 'react-redux'
 import Lookup from '../components/applicant/lookup'
 import Show from '../components/applicant/show'
+import 'primereact/resources/themes/nova-light/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 
 const ApplicantContainer = (props) => {
   return (
@@ -11,7 +14,6 @@ const ApplicantContainer = (props) => {
       {!props.applicant.loaded && <Lookup />}
       {props.applicant.loaded && (
         <div>
-          <p>Your application id is {props.applicant.applicationID}</p>
           <Show applicant={props.applicant} />
         </div>
       )}

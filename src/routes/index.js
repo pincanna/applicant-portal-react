@@ -17,9 +17,10 @@ function Routes() {
       <Container>
         <Header />
         <Switch>
-          <Route path="/counter" component={CounterContainer} /> <Route path="/" component={ApplicantContainer} />{' '}
-        </Switch>{' '}
-      </Container>{' '}
+          <Route path="/counter" component={CounterContainer} />
+          <Route path="/" component={ApplicantContainer} />
+        </Switch>
+      </Container>
     </Router>
   )
 }

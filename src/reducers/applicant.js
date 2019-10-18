@@ -4,6 +4,7 @@ const initialState = {
   firstName: null,
   lastName: null,
   email: null,
+  phone: null,
   street_address: null,
   city: null,
   state: null,
@@ -25,16 +26,16 @@ export default function counter(state = initialState, action) {
       return {
         ...state,
         ...action.payload,
-        loaded: true,
+          loaded: true,
       }
-    case ActionTypes.LOAD_APPLICANT_FAILURE:
-      return {
-        ...state,
-        loaded: false,
-      }
-    case ActionTypes.CLEAR_APPLICANT:
-      return initialState
-    default:
-      return state
+      case ActionTypes.LOAD_APPLICANT_FAILURE:
+        return {
+          ...state,
+          loaded: false,
+        }
+        case ActionTypes.CLEAR_APPLICANT:
+          return initialState
+        default:
+          return state
   }
 }
