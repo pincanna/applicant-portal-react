@@ -5,11 +5,9 @@ import moment from 'moment-timezone'
 import styled from '@emotion/styled'
 import { Panel } from 'primereact/panel'
 import UploadResume from './upload'
-
 const LeftAligned = styled.div`
   text-align: left;
 `
-
 const Show = ({ applicant }) => {
   const fullName = NameCase(`${applicant.firstName} ${applicant.lastName}`)
   return (
@@ -22,14 +20,12 @@ const Show = ({ applicant }) => {
             <Panel header="Applicant" toggleable={true}>
               <dt>Name</dt>
               <dd>{fullName}</dd>
-
               <dt>Date</dt>
               <dd>
                 {moment(applicant.entryDate)
                   .tz('America/Detroit')
                   .format('lll')}
               </dd>
-
               <dt>ID</dt>
               <dd>{applicant.locatorID}</dd>
             </Panel>
@@ -66,7 +62,6 @@ const Show = ({ applicant }) => {
                     : 'We have not yet received your resume. We will not be able to review your application until you submit a resume.'}
                 </p>
                 <p>Our hiring team is currently reviewing all applications.</p>
-
                 <p>
                   If you are among qualified candidates, you will receive a call from one of our recruiters to schedule
                   a phone interview. In any case, we will keep you posted on the status of your application.
@@ -91,7 +86,6 @@ const Show = ({ applicant }) => {
                 </p>
               </div>
             </Panel>
-
             {applicant.comments.length > 0 && (
               <Panel header="Comments" toggleable={true}>
                 <table className="table table-bordered table-striped table-hoverable table-sm">
@@ -122,5 +116,4 @@ const Show = ({ applicant }) => {
     </div>
   )
 }
-
 export default Show
