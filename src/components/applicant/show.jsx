@@ -6,6 +6,7 @@ import styled from '@emotion/styled'
 import { Panel } from 'primereact/panel'
 import UploadResume from './upload'
 import AppSteps from './steps'
+import NewComment from './new_comment'
 const LeftAligned = styled.div`
   text-align: left;
 `
@@ -46,6 +47,7 @@ const Show = ({ applicant }) => {
                 <UploadResume id={applicant.locatorID} />
               </Panel>
             )}
+            <NewComment applicant={applicant} />
           </div>
           <div className="col-md-8">
             <AppSteps applicant={applicant} />
