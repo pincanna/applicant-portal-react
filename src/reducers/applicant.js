@@ -18,6 +18,7 @@ const initialState = {
   locatorID: null,
   entryDate: null,
   comments: [],
+  accessKey: ''
 }
 
 export default function counter(state = initialState, action) {
