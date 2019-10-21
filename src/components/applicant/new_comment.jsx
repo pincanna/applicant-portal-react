@@ -2,6 +2,7 @@ import React from 'react'
 import { Panel } from 'primereact/panel'
 import { ProgressSpinner } from 'primereact/progressspinner'
 import Axios from 'axios'
+import { fetchApplicantSuccess } from '../../actions/applicant'
 
 const NewComment = (props) => {
   const [body, setBody] = React.useState('')
@@ -18,7 +19,11 @@ const NewComment = (props) => {
       .then((data) => {
         alert('Message sent.')
         setBody('')
-        setLoading(false)
+        console.log('Posted message.', data)
+        /* Axios.get(`https://gateway.pincanna.com/api/v1/applicants/00000.json?accessKey=${applicant.accessKey}`)
+          .then((res) => res.data)
+          .then((app) => fetchApplicantSuccess(app))
+          .catch((err) => console.error(err)) */
       })
       .catch((err) => {
         alert('Your message was not sent.')
