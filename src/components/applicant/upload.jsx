@@ -31,7 +31,9 @@ const UploadResume = (props) => {
     <div className="upload-resume">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="applicant-certificate">Resume</label>
+          <label htmlFor="applicant-certificate" style={{ color: 'red', fontWeight: 800, textAlign: 'center' }}>
+            Please upload a resume to complete your application:
+          </label>
           <input
             type="file"
             name="applicant[certificate]"

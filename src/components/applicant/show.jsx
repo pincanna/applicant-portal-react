@@ -1,7 +1,6 @@
 import React from 'react'
 import NameCase from 'namecase'
 // import moment from 'moment'
-import spdf from 'simple-react-pdf'
 import moment from 'moment-timezone'
 import styled from '@emotion/styled'
 import { Panel } from 'primereact/panel'
@@ -45,6 +44,11 @@ const Show = ({ applicant }) => {
               <dt>Phone</dt>
               <dd>{applicant.phone}</dd>
             </Panel>
+            {!applicant.resume_uploaded && (
+              <Panel header="Upload Resume">
+                <UploadResume id={applicant.locatorID} />
+              </Panel>
+            )}
           </div>
           <div className="col-md-8">
             <Panel header="Application Status" toggleable={true}>
@@ -58,7 +62,7 @@ const Show = ({ applicant }) => {
                 </p>
                 <p>
                   {applicant.resume_uploaded
-                    ? 'Thank you for providing your resume; we have added it to your file.'
+                    ? 'Thank you for providing your resume; we have added it to your file. Please check your email for information about the state-mandated background check.'
                     : 'We have not yet received your resume. We will not be able to review your application until you submit a resume.'}
                 </p>
                 <p>Our hiring team is currently reviewing all applications.</p>
@@ -78,13 +82,16 @@ const Show = ({ applicant }) => {
                   Cheers! <br />
                   The Pincanna Team
                 </p>
+                <hr />
+                <p style={{ textAlign: 'center' }}>
+                  <em>
+                    Please note that due to an extremely high number of applications, we are not able to respond to
+                    every email. We appreciate your continued patience.
+                  </em>
+                </p>
               </div>
             </Panel>
-            {!applicant.resume_uploaded && (
-              <Panel header="Upload Resume">
-                <UploadResume id={applicant.locatorID} />
-              </Panel>
-            )}
+
             {applicant.comments.length > 0 && (
               <Panel header="Comments" toggleable={true}>
                 <table className="table table-bordered table-striped table-hoverable table-sm">
