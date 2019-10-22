@@ -9,9 +9,9 @@ const NewComment = (props) => {
   const [loading, setLoading] = React.useState(false)
   const { applicant } = props
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
+    await setLoading(true)
     Axios.post(`https://gateway.pincanna.com/api/v1/applicants/${applicant.locatorID}/comments`, {
       body: body,
     })
@@ -29,6 +29,7 @@ const NewComment = (props) => {
         alert('Your message was not sent.')
         setLoading(false)
       })
+    await setLoading(false)
   }
 
   return (
