@@ -1,4 +1,7 @@
 import ActionTypes from '../constants/actionTypes'
+import {
+  Action
+} from 'rxjs/internal/scheduler/Action'
 
 const initialState = {
   firstName: null,
@@ -23,24 +26,28 @@ const initialState = {
 
 export default function counter(state = initialState, action) {
   switch (action.type) {
-    case ActionTypes.LOAD_APPLICANT_SUCCESS:
+    case ActionTypes.FETCH_APPLICANT:
       return {
-        ...state,
-        ...action.payload,
-          loaded: true,
+        ...state, loading: true
       }
-      case ActionTypes.LOAD_APPLICANT_FAILURE:
+      case ActionTypes.LOAD_APPLICANT_SUCCESS:
         return {
           ...state,
-          loaded: false,
+          ...action.payload,
+            loaded: true,
         }
-        case ActionTypes.CLEAR_APPLICANT:
-          return initialState
-        case ActionTypes.RESUME_UPLOAD_SUCCESS:
+        case ActionTypes.LOAD_APPLICANT_FAILURE:
           return {
-            ...state, resume_uploaded: true
+            ...state,
+            loaded: false,
           }
-          default:
-            return state
+          case ActionTypes.CLEAR_APPLICANT:
+            return initialState
+          case ActionTypes.RESUME_UPLOAD_SUCCESS:
+            return {
+              ...state, resume_uploaded: true
+            }
+            default:
+              return state
   }
 }

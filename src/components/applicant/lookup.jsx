@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { fetchApplicantSuccess } from '../../actions/applicant'
+import { fetchApplicantSuccess, fetchApplicant } from '../../actions/applicant'
 import styled from '@emotion/styled'
 
 const PaddedTop = styled.div`
@@ -14,6 +14,7 @@ const Lookup = (props) => {
   const [locatorID, setLocatorID] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
+    // fetchApplicant(locatorID, firstName, lastName)
     axios
       .get(
         `https://gateway.pincanna.com/api/v1/applicants/${locatorID}.json?firstName=${firstName}&lastName=${lastName}`,
@@ -83,5 +84,5 @@ const Lookup = (props) => {
 
 export default connect(
   null,
-  { fetchApplicantSuccess },
+  { fetchApplicantSuccess, fetchApplicant },
 )(Lookup)

@@ -50,7 +50,6 @@ const Show = ({ applicant }) => {
             <NewComment applicant={applicant} />
           </div>
           <div className="col-md-8">
-            <AppSteps applicant={applicant} />
             <Panel header="Application Status" toggleable={true}>
               {applicant.resume_uploaded && <div className="alert alert-success">We have received your resume.</div>}
               {!applicant.resume_uploaded && (
