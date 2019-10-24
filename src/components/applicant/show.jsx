@@ -5,7 +5,6 @@ import moment from 'moment-timezone'
 import styled from '@emotion/styled'
 import { Panel } from 'primereact/panel'
 import UploadResume from './upload'
-import AppSteps from './steps'
 import NewComment from './new_comment'
 const LeftAligned = styled.div`
   text-align: left;

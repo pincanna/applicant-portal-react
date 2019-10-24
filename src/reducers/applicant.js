@@ -1,7 +1,4 @@
 import ActionTypes from '../constants/actionTypes'
-import {
-  Action
-} from 'rxjs/internal/scheduler/Action'
 
 const initialState = {
   firstName: null,

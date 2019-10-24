@@ -22,7 +22,7 @@ const UploadResume = (props) => {
       })
       .then((response) => response.data)
       .then(async (data) => {
-        if (data.updated == true) {
+        if (data.updated === true) {
           alert('Resume uploaded!')
           resumeUploaded(data)
           await setLoading(false)

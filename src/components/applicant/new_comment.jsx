@@ -2,7 +2,6 @@ import React from 'react'
 import { Panel } from 'primereact/panel'
 import { ProgressSpinner } from 'primereact/progressspinner'
 import Axios from 'axios'
-import { fetchApplicantSuccess } from '../../actions/applicant'
 
 const NewComment = (props) => {
   const [body, setBody] = React.useState('')
