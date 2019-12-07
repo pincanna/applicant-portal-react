@@ -60,7 +60,7 @@ const Show = ({ applicant }) => {
                 </p>
                 <p>
                   {applicant.resume_uploaded
-                    ? 'Thank you for providing your resume; we have added it to your file. Please check your email for information about the state-mandated background check.'
+                    ? 'Thank you for providing your resume; we have added it to your file.'
                     : 'We have not yet received your resume. We will not be able to review your application until you submit a resume.'}
                 </p>
                 <p>Our hiring team is currently reviewing all applications.</p>
@@ -68,24 +68,19 @@ const Show = ({ applicant }) => {
                   If you are among qualified candidates, you will receive a call from one of our recruiters to schedule
                   a phone interview. In any case, we will keep you posted on the status of your application.
                 </p>
+                
                 <p>
                   <u>
-                    We are still in the process of construction and will not be able to provide additional updates until
-                    the first quarter of 2020.
+                    We unfortunately are not able to provide you with additional information or schedule additional interviews until first quarter 2020.
                   </u>
                 </p>
                 <p>Please continue to check this portal for additional updates.</p>
+                <p>You may also call our automated, toll-free number at (855) 929-CANN <small>(855-929-2266).</small></p>
                 <p>
-                  Cheers! <br />
+                  Best wishes for a happy holiday! <br />
                   The Pincanna Team
                 </p>
-                <hr />
-                <p style={{ textAlign: 'center' }}>
-                  <em>
-                    Please note that due to an extremely high number of applications, we are not able to respond to
-                    every email. We appreciate your continued patience.
-                  </em>
-                </p>
+                
               </div>
             </Panel>
             {applicant.comments.length > 0 && (
