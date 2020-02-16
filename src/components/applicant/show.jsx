@@ -1,11 +1,13 @@
-import React from 'react'
-import NameCase from 'namecase'
+import styled from '@emotion/styled';
+import moment from 'moment-timezone';
+import NameCase from 'namecase';
+import { Panel } from 'primereact/panel';
+import React from 'react';
+
+import NewComment from './new_comment';
+import UploadResume from './upload';
+
 // import moment from 'moment'
-import moment from 'moment-timezone'
-import styled from '@emotion/styled'
-import { Panel } from 'primereact/panel'
-import UploadResume from './upload'
-import NewComment from './new_comment'
 const LeftAligned = styled.div`
   text-align: left;
 `
@@ -58,33 +60,16 @@ const Show = ({ applicant }) => {
                 <p>
                   <strong>Hello {fullName}</strong>,
                 </p>
+                <p>Thank you for taking the first step and filling out your employment application at Pincanna.com</p>
                 <p>
                   {applicant.resume_uploaded
-                    ? 'Thank you for providing your resume; we have added it to your file. Please check your email for information about the state-mandated background check.'
-                    : 'We have not yet received your resume. We will not be able to review your application until you submit a resume.'}
-                </p>
-                <p>Our hiring team is currently reviewing all applications.</p>
-                <p>
-                  If you are among qualified candidates, you will receive a call from one of our recruiters to schedule
-                  a phone interview. In any case, we will keep you posted on the status of your application.
+                    ? 'Thank you for your interest in a career at Pincanna. We have received your uploaded resume and have added it to your file. Your application is now complete and under review.'
+                    : '<b>Please check your email for instructions on how to upload your resume to complete your application.</b><br/><br/>Once your application is complete, your application will be reviewed. If your application and experience aligns with one of our open positions, our hiring team will reach out to you.'}
                 </p>
                 <p>
-                  <u>
-                    We are still in the process of construction and will not be able to provide additional updates until
-                    the first quarter of 2020.
-                  </u>
-                </p>
-                <p>Please continue to check this portal for additional updates.</p>
-                <p>
-                  Cheers! <br />
+                  Thank you,
+                  <br />
                   The Pincanna Team
-                </p>
-                <hr />
-                <p style={{ textAlign: 'center' }}>
-                  <em>
-                    Please note that due to an extremely high number of applications, we are not able to respond to
-                    every email. We appreciate your continued patience.
-                  </em>
                 </p>
               </div>
             </Panel>
