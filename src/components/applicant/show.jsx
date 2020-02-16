@@ -63,8 +63,8 @@ const Show = ({ applicant }) => {
 
                 <p>
                   {applicant.resume_uploaded
-                    ? 'Thank you for your interest in a career at Pincanna. We have received your uploaded resume and have added it to your file. Your application is now complete and under review.'
-                    : '<p>Thank you for taking the first step and filling out your employment application at Pincanna.com</p><b>Please check your email for instructions on how to upload your resume to complete your application.</b><br/><br/>Once your application is complete, your application will be reviewed. If your application and experience aligns with one of our open positions, our hiring team will reach out to you.'}
+                    ? 'Thank you for your interest in a career at Pincanna. We have received your uploaded resume and have added it to your file.\n\nYour application is now complete and under review.'
+                    : '\nThank you for taking the first step and filling out your employment application at Pincanna.com\nPlease check your email for instructions on how to upload your resume to complete your application.\n\nOnce your application is complete, your application will be reviewed. If your application and experience aligns with one of our open positions, our hiring team will reach out to you.'}
                 </p>
                 <p>
                   Thank you,
